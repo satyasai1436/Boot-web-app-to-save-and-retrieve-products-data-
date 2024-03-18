@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }	
+        .container {
+            max-width: 500px;
+            margin-top: 50px;
+        }
+        .message {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            color: #333; /* Text color */
+        }
+        .btn-show-products {
+            color: #007bff; /* Link color */
+            text-decoration: none;
+        }
+        .btn-show-products:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">
+            <p th:text="${msg}"></p>
+            <a href="/get1" class="btn-show-products">Click Here To See The Saved Products</a>
+        </div>
+    </div>
+</body>
+</html>
