@@ -1,69 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .container {
-            max-width: 500px;
-            margin-top: 50px;
-        }
-        form {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-        }
-        form table th {
-            width: 100px;
-            text-align: left;
-            color: #007bff; /* Blue color for table headers */
-        }
-        .btn-submit {
-            background-color: #28a745; /* Green color for submit button */
-            color: #ffffff;
-            border: none;
-        }
-        .btn-submit:hover {
-            background-color: #218838; /* Darker green color on hover */
-        }
-        .btn-show-products {
-            color: #007bff; /* Blue color for "Show Saved Products" link */
-            text-decoration: none;
-        }
-        .btn-show-products:hover {
-            text-decoration: underline;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Product</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		body {
+			background-color: #f8f9fa;
+		}
+
+		.container {
+			max-width: 500px;
+			margin-top: 50px;
+		}
+
+		form {
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+		}
+
+		form table th {
+			width: 100px;
+			text-align: left;
+			color: #007bff;
+			/* Blue color for table headers */
+		}
+
+		.btn-submit {
+			background-color: #28a745;
+			/* Green color for submit button */
+			color: #ffffff;
+			border: none;
+		}
+
+		.btn-submit:hover {
+			background-color: #218838;
+			/* Darker green color on hover */
+		}
+
+		.btn-show-products {
+			color: #007bff;
+			/* Blue color for "Show Saved Products" link */
+			text-decoration: none;
+		}
+
+		.btn-show-products:hover {
+			text-decoration: underline;
+		}
+	</style>
 </head>
+	
 <body>
-    <div class="container">
-        <h2 style="color: #007bff;">Add Product</h2> <!-- Blue color for heading -->
-        <form th:action="@{/form}" th:object="${set}" method="post">
-            <table class="table">
-                <tr>
-                    <th>Name</th>
-                    <td><input type="text" class="form-control" th:field="*{pName}"></td>
-                </tr>
-                <tr>
-                    <th>Price</th>
-                    <td><input type="text" class="form-control" th:field="*{pPrice}"></td>
-                </tr>
-                <tr>
-                    <th>Date</th>
-                    <td><input type="text" class="form-control" th:field="*{pDate}"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" class="btn btn-submit" value="Submit"></td>
-                </tr>
-            </table>
-        </form>
-        <a href="/get1" class="btn-show-products">Show Saved Products</a>
-    </div>
+	<div class="container">
+		<h2 style="color: #007bff;">Add Product</h2> <!-- Blue color for heading -->
+		<form th:action="@{/form}" th:object="${set}" method="post">
+			<p th:text="${msg}"></p>
+			<table class="table">
+				<tr>
+					<th>Name</th>
+					<td><input type="text" class="form-control" th:field="*{pName}" required></td>
+				</tr>
+				<tr>
+					<th>Price</th>
+					<td><input type="text" class="form-control" th:field="*{pPrice}" required></td>
+				</tr>
+				<tr>
+					<th>Date</th>
+					<td><input type="text" class="form-control" th:field="*{pDate}" required></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" class="btn btn-submit" value="Submit"></td>
+				</tr>
+			</table>
+		</form>
+		<a href="/get1" class="btn-show-products">Show Saved Products</a>
+	</div>
 </body>
+
 </html>
